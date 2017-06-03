@@ -7,7 +7,6 @@ class Palindrome:
     def read_file(self):
         words = []
         new_words = []
-        i = 0
         letters = 'абвгґдеєжзиіїйклмнопрстуфхцчшщьюяАБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ'
         file = open(self.name, 'r', encoding='UTF-8')
         for line in file:
