@@ -1,10 +1,19 @@
 from arraystack import ArrayStack
 class Palindrome:
     def __init__(self, name):
+        '''
+        Initialazes the name of the file where the data is.
+        :param name: the name of the file where the data is.
+        '''
         self.name = name
 
 
     def read_file(self):
+        '''
+        Reads the file where the data is located.
+        :return: list of words
+        :return:
+        '''
         words = []
         new_words = []
         letters = 'абвгґдеєжзиіїйклмнопрстуфхцчшщьюяАБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ'
@@ -21,6 +30,10 @@ class Palindrome:
         return new_words
 
     def check_word(self):
+        '''
+        Function checks words from the list if they are palindromes.
+        :return: list of palindromes.
+        '''
         reverse = ''
         lst = []
         stack = ArrayStack()
@@ -36,6 +49,11 @@ class Palindrome:
         return lst
 
     def write_in_file(self, write_file):
+        '''
+        Function writes palindromes to the file.
+        :param write_file: name of the file.
+        :return:
+        '''
         self.write_file = write_file
         polindrome = self.check_word()
         file = open(self.write_file, 'w')
