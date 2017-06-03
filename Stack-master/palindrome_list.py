@@ -7,17 +7,26 @@ class Palindrome:
         '''
         self.name = name
 
+
     def read_file(self):
         '''
         Reads the file where the data is located.
         :return: list of words
+        :return:
         '''
         words = []
-        file = open(self.name, 'r')
+        new_words = []
+        file = open(self.name, 'r', encoding='UTF-8')
         for line in file:
-            line = line.strip()
+            line = line.strip().split()
             words.append(line)
-        return words
+        for lst in words:
+            if len(lst) > 1:
+                del lst[1:]
+            for w in lst:
+                new_words.append(w)
+        print(new_words)
+        return new_words
 
     def check_word(self):
         '''
@@ -50,5 +59,5 @@ class Palindrome:
         for pol in polindrome:
             file.write(pol + '\n')
 
-palindrome1 = Palindrome('words.txt')
-palindrome1.write_in_file('palindrome_en.txt')
+pol = Palindrome('words.txt')
+pol.write_in_file('palindrome_en.txt')
