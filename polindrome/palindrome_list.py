@@ -25,7 +25,7 @@ class Palindrome:
                 del lst[1:]
             for w in lst:
                 new_words.append(w)
-        print(new_words)
+        #print(new_words)
         return new_words
 
     def check_word(self):
@@ -60,4 +60,4 @@ class Palindrome:
             file.write(pol + '\n')
 
 pol = Palindrome('words.txt')
-pol.write_in_file('palindrome_en.txt')
+print(pol.write_in_file('palindrome_en.txt'))
