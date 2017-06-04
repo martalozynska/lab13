@@ -1,5 +1,5 @@
 # Program for building and solving a maze.
-from maze_full import Maze
+from maze import Maze
 
 # The main routine.
 def main():
@@ -10,6 +10,7 @@ def main():
     else :
         print( "Path not found...." )
         maze.draw()
+
 
 # Builds a maze based on a text format in the given file.
 def buildMaze( filename ):
@@ -34,7 +35,6 @@ def buildMaze( filename ):
 
     # Close the maze file and return the newly constructed maze.
     infile.close()
-
     return maze
 
 # Extracts an integer value pair from the given input file.

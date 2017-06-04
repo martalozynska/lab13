@@ -47,7 +47,11 @@ class Maze :
 
     # Resets the maze by removing all "path" and "tried" tokens.
     def reset( self ):
-        pass
+        for r in range(self.num_rows()):
+            for c in range(self.num_cols()):
+                if self._mazeCells[r,c] == self.PATH_TOKEN or self._mazeCells[r,c] == self.TRIED_TOKEN:
+                    self._mazeCells[r,c] = None
+
 
     # Prints a text-based representation of the maze.
     def draw( self ):
@@ -76,3 +80,6 @@ class _CellPosition( object ):
     def __init__( self, row, col ):
         self.row = row
         self.col = col
+
+m = Maze(3,4)
+print(m.reset())
